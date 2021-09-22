@@ -1,9 +1,3 @@
---That dead sky open source by Kel
---tgc must patch this all
---Do you have some good functions or codes?
---Tell me https://t.me/EL_Khan049
-
-
 
 gg.toast('FuckChina Loaded')
 ddd = 210922
