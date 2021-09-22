@@ -6,7 +6,7 @@
 
 
 gg.toast('FuckChina Loaded')
-ddd = 210921
+ddd = "a21.09.18"
 pshare = ''
 umenu = true
 fasthome = true
@@ -83,7 +83,7 @@ poffsets = {
   famount = 0x25558,
   gesture = 0x2C4C4,
   magic = 0x2B788,
-  bsize = 0x25494+0x14,
+  bsize = 0x25494,
   uemote = -0x43D20,
   eflowers = 0xB266A8,
   pshout = 0x22DE0,
@@ -3451,7 +3451,7 @@ function domenu()
         if x == 14 then
           nowind()
         end
-        if x == 15 then
+        if x == 13 then
           if fasthome then
             fasthome = false
             gamespeed(1)
@@ -3463,13 +3463,13 @@ function domenu()
           end
           
         end
-        if x == 16 then
+        if x == 15 then
           setadd(eoffsets.glight,gg.TYPE_FLOAT,inputnum(1),false)
         end
-        if x == 17 then
+        if x == 16 then
           setadd(eoffsets.wlight,gg.TYPE_FLOAT,inputnum(1),false)
         end
-        if x == 18 then
+        if x == 17 then
           fastitem = toggle(fastitem)
           gg.toast(boolling(fastitem))
         end
@@ -3974,8 +3974,8 @@ function domenu()
         scsettings()
       end
       if m == 15 then
-        x=gg.choice({'Kill game','print offsets','print emotes','print items','print magics','print daily','frags','pick crab','throw crab','absorb spirits','execute','load coord','door','search'
-        },nil,'⚠️This features are not stable')
+        x=gg.choice({'Kill game','print offsets','print emotes','print items','print magics','print daily','frags','pick crab','throw crab','absorb spirits','execute','load coord','door'
+      },nil,'⚠️This features are not stable')
         if x == 1 then
           killgame()
         end
@@ -4022,20 +4022,7 @@ function domenu()
         if x == 13 then
           doorpeek(false)
         end
-        if x == 14 then
-          vde = gg.getResults(gg.getResultsCount())
-          vxd = inputnum(0)
-          vre = inputnum(0)
-          vcd = inputnum(0)
-          for i,v in ipairs(vde) do
-            gg.clearResults()
-            gg.searchNumber((v.address-vre)..'~'..(v.address+vre),gg.TYPE_QWORD,false,nil,vxd,vxd+vcd)
-            if gg.getResultsCount() ~= 0 then
-              break;
-            end
-          end
-          gg.toast('done')
-        end
+      
       end
         --absflower()
       
