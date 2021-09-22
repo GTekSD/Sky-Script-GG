@@ -1,10 +1,7 @@
 --That dead sky open source by Kel
 --tgc must patch this all
 --Do you have some good functions or codes?
---Tell me https://t.me/EL_Khan049
-
-
-
+--Tell me discord ExMachina#5142
 gg.toast('FuckChina Loaded')
 ddd = "a21.09.18"
 pshare = ''
@@ -41,7 +38,6 @@ psettings = {
   ufps = 30
   }
   
-changelog = '09.21 update\n\n-Fixed ui bugs in Engine settings\n-Fixed script bugs\n-Discord server removed by discord team\ncontact me https://t.me/EL_Khan049'hug and more'
 scriptv = {process ='com.tgc.sky.android',version=175117}
 teleparr = {spec = false,follow = false,collect = false,enable = false,hide = false,arr = 1}
 gameinfo = gg.getTargetInfo()
@@ -57,7 +53,6 @@ resettick = -1
 magictick = -1
 maxemote = ''
 reached = ''
-
 pbase = 0x00
 prange = {a = 0,b = -1}
 rbootloader = 0x00
@@ -117,7 +112,6 @@ poffsets = {
   phands = 0x1AF08,
   hidenseek = 0x1C8F4
   }
-
 allmagics = {}
 sarray = {}
 candles = {}
@@ -252,7 +246,6 @@ windwallset = {
     {"Rain", 4814944809953808321},
     {"RainForest", 4834051251148619776},
     {"RainShelter", 4810601017446974458},
-
     {"RainMid", 4829954002675894547},
     {"RainEnd", 4817725702471155712},
     {"Rain_BaseCamp", 4843677694493622950},
@@ -274,7 +267,6 @@ windwallset = {
     {"NightDesert", 4756517339743666084},
     {"NightDesert", 4689256204097823239}
 }
-
 cworld = {
    {"[Home]CandleSpace", 'CandleSpace'},
    {"[Isle]Dawn", 'Dawn'},
@@ -336,7 +328,6 @@ cworld = {
  doors = {
    
  }
-
 mslot = {
   'none',
   'none',
@@ -348,7 +339,6 @@ mslot = {
   'none',
   'none'
 }
-
 spiritlist = {
   {414084241,"Pointing"},
    {3666569351,"No"},
@@ -388,7 +378,6 @@ spiritlist = {
    {3576140497,"Standing Posture"},
    {3594096657,"Pray"}
 }
-
 pid = {
   {57978849, "Windmill🏅"},
        {-677716449,"Purple Umbrella"},
@@ -444,7 +433,6 @@ pid = {
        {313507026,'Mini stone fire'},
        {2035109393,"Nothing"}
 }
-
 cpoint = {
   pr1 = {
     {96.95172882080078, 203.9423370361328, 272.4224853515625}, 
@@ -558,13 +546,10 @@ cpoint = {
     {-276.9136047363281, 85.47688293457031, -344.01361083984375}
   }
 }
-
 posits = {
 }
-
 crlist = {
 }
-
 imgs = {
   'Clear',
   'Black',
@@ -583,16 +568,12 @@ imgs = {
   'UIEye',
   ''
 }
-
 mlist = {}
-
 hitarr = {
 }
-
 --That dead sky open source by Kel
 --Do you have some good functions or codes?
---Tell me https://t.me/EL_Khan049
-
+--Tell me discord ExMachina#5142
 function indexof(a,b)
   for k,v in ipairs(a) do 
     if v == b then
@@ -601,11 +582,9 @@ function indexof(a,b)
   end
   return -1
 end
-
 function compare2(a,b)
   return a.v < b.v
 end
-
 function getadd(add,flag)
   local uu = {}
   uu[1] = {
@@ -615,7 +594,6 @@ function getadd(add,flag)
   yy = gg.getValues(uu)
   return tonumber(yy[1].value)
 end
-
 function getaddm(arr)
   local uu = {}
   local yy = {}
@@ -631,7 +609,6 @@ function getaddm(arr)
   end
   return yy
 end
-
 function gamespeed(val)
   if poffsets.gspeed == 0x00 or psettings.ggspeed then
     gg.setSpeed(val)
@@ -639,8 +616,6 @@ function gamespeed(val)
     setadd(eoffsets.nentity - poffsets.gspeed,gg.TYPE_FLOAT,val,true)
   end
 end
-
-
 function setadd(add,flag,val,bfreeze)
   local uu = {}
   uu[1] = {
@@ -661,7 +636,6 @@ function setadd(add,flag,val,bfreeze)
     end
   end
 end
-
 function isfreeze(add)
   mlist = gg.getListItems()
   for i, v in next, mlist do
@@ -672,7 +646,6 @@ function isfreeze(add)
   end
   return false
 end
-
 function addtostr(add,amount)
   mp = ''
   for i = 0, amount do
@@ -682,7 +655,6 @@ function addtostr(add,amount)
   end
   return mp
 end
-
 function getpatch()
   API = gg.makeRequest('https://raw.githubusercontent.com/Kelrit402/TGC_Sky_is_dead/main/Sharelocate.lua').content
   if not API then
@@ -691,7 +663,6 @@ function getpatch()
     pcall(load(API))
   end
 end
-
 function toint(n) 
   local s = tostring(n) 
   local i, j = s:find('%.') 
@@ -701,7 +672,6 @@ function toint(n)
     return n 
   end 
 end
-
 function tbltostr(tbl)
     local result = "{"
     for k, v in pairs(tbl) do
@@ -722,13 +692,11 @@ function tbltostr(tbl)
     end
     return result.."}"
 end
-
 function savedata()
   local data = io.open('/sdcard/fuck.cfg','w')
   data:write("psettings=" .. tbltostr(psettings))
   data:close()
 end
-
 function loadsave()
   local data = io.open('/sdcard/fuck.cfg','r')
   if data == nil then
@@ -756,13 +724,8 @@ function loadsave()
     if psettings.ufps == nil then
       psettings.ufps = 30
     end
-    if psettings.ver == nil or psettings.ver ~= ddd then
-      psettings.ver = ddd
-      gg.alert(changelog)
-    end
   end
 end
-
 function boolling(boo)
   if type(boo) ~= "boolean" then return; end
   if boo then
@@ -771,7 +734,6 @@ function boolling(boo)
     return '❌'
   end
 end
-
 function toggle(boo)
   if boo then
     return false
@@ -779,7 +741,6 @@ function toggle(boo)
     return true
   end
 end
-
 function replace(text,bf,tg)
   retText = text
   for i=0, 10 do
@@ -791,7 +752,6 @@ function replace(text,bf,tg)
   end
   return retText
 end
-
 function fbyte(str,ka,kb) 
   local K, F = ka, 16384 + kb 
   return (str:gsub('%x%x', function(c) 
@@ -803,7 +763,6 @@ function fbyte(str,ka,kb)
     return string.char(m) 
   end )) 
 end
-
 function fpbase()
   pbase = getadd(rbootloader + poffsets.ptoplayer,gg.TYPE_QWORD) + poffsets.ptopbase
   eoffsets.nentity = getadd(rbootloader + poffsets.ptoentity,gg.TYPE_QWORD) + poffsets.ptonentity
@@ -848,7 +807,6 @@ function fpbase()
   end
   ]]--
 end
-
 function vcheck()
   if gameinfo.packageName ~= scriptv.process then
     gg.alert('[Error] You selected wrong process!\ngame : ' .. gameinfo.packageName)
@@ -864,7 +822,6 @@ function vcheck()
     gg.alert('[Error] Script needs update! \ngame : ' .. tonumber(gameinfo.versionCode) .. '\nscript : ' .. scriptv.version)
   end
 end
-
 function startup()
   loadsave()
   vcheck()
@@ -900,10 +857,8 @@ if gg.getResultsCount() ~= 0 then
   eoffsets.jforce = mm[1].address + 0x638
 end
 gg.clearResults()
-
 --setadd(eoffsets.graphic,gg.TYPE_FLOAT,1,false)
 --gg.addListItems(nn)
-
 gg.searchNumber("-0.01499999966", gg.TYPE_FLOAT)
 mm = {}
 nn = {}
@@ -919,7 +874,6 @@ for sn4, sn5 in ipairs(mm) do
   eoffsets.ground = sn5.address
 end
 --gg.addListItems(nn)
-
 gg.searchNumber("0.8", gg.TYPE_FLOAT)
 mm = {}
 nn = {}
@@ -935,7 +889,6 @@ for sn4, sn5 in ipairs(mm) do
   eoffsets.slide = sn5.address
 end
 --gg.addListItems(nn)
-
 gg.searchNumber("4.90000009537F;4.59999990463F;0.89999997616F;0.81999999285F::13", gg.TYPE_FLOAT)
 mm = {}
 nn = {}
@@ -951,7 +904,6 @@ for sn4, sn5 in ipairs(mm) do
   eoffsets.jump = sn5.address
 end
 --gg.addListItems(nn)
-
 gg.searchNumber("-3.16081619263", gg.TYPE_FLOAT)
 mm = {}
 nn = {}
@@ -1031,7 +983,6 @@ nn = gg.getListItems()
 for i, v in next, nn do
   table.insert(sarray,nn[i].address)
 end
-
 --[[
 --0x138AF2C
 gg.clearResults()
@@ -1053,7 +1004,6 @@ end
 if eoffsets.world == 0x00 then gg.toast('err') end
 gg.addListItems(gg.getValues({{address = eoffsets.world, flags = 4}}))
 --ggrange(4)
-
 gg.clearResults()
 gg.searchNumber(1099746509,4,false,nil,prange.a,prange.b)
 nn = 0x00
@@ -1104,7 +1054,6 @@ eoffsets.nworld = gg.getResults(gg.getResultCount())[1].address + 0x364
 --gg.clearResults()
 --gg.searchNumber(0.16699999571,16)
 eoffsets.ncamera = eoffsets.nentity - poffsets.gcamera
-
 --gg.addListItems(candles)
 gg.clearResults()
 if andro >= 30 then
@@ -1113,8 +1062,18 @@ if andro >= 30 then
   else
     gg.toast('\n𝙉𝙤 𝙋𝙖𝙞𝙣 𝙔𝙚𝙨 𝙂𝙖𝙞𝙣\n' .. ddd .. ' by Kel')
 end
-  
+
 if psettings.nodamage then
+
+    
+          
+            
+    
+
+          
+    
+    
+  
   setadd(pbase + poffsets.pdamage,gg.TYPE_DWORD,0,true)
 end
 if psettings.fasthome then
@@ -1127,11 +1086,9 @@ setadd(eoffsets.gframe,gg.TYPE_FLOAT,psettings.ufps,false)
 getpatch()
 print('𝙉𝙤 𝙋𝙖𝙞𝙣 𝙔𝙚𝙨 𝙂𝙖𝙞𝙣\n')
 end
-
 function itoh(int)
   return string.format("%x",int)
 end
-
 function debg()
   nn = ''
   nn = nn .. tostring(itoh(pbase)) .. ' -- wingcount\n'
@@ -1154,7 +1111,6 @@ function debg()
   nn = nn .. tostring(itoh(eoffsets.ncamera)) .. ' player camera\n'
   print(nn)
 end
-
 --math
 function pmove(dis)
   local x,y,z = getadd(pbase + poffsets.positX,gg.TYPE_FLOAT), getadd(pbase + poffsets.positY,gg.TYPE_FLOAT), getadd(pbase + poffsets.positZ,gg.TYPE_FLOAT)
@@ -1166,7 +1122,6 @@ function pmove(dis)
   setposit(x + ax,y,z + az)
   gg.setVisible(false)
 end
-
 function upemote()
   setadd(pbase + poffsets.eused,gg.TYPE_DWORD,0,true)
   setadd(pbase + poffsets.eused + 0x4,gg.TYPE_DWORD,0,true)
@@ -1215,7 +1170,6 @@ function upemote()
   end
   gg.toast('done : ' .. maxemote)
 end
-
 function getcoord(boo)
   if boo then
     return {getadd(pbase + poffsets.positX,gg.TYPE_FLOAT)
@@ -1227,7 +1181,6 @@ function getcoord(boo)
     ,z=getadd(pbase + poffsets.positZ,gg.TYPE_FLOAT)}
   end
 end
-
 function ggrange(vr)
   if psettings.aeleven then
     if vr ~= gg.REGION_CODE_APP then
@@ -1240,7 +1193,6 @@ function ggrange(vr)
   end
   --gg.setRanges(vr)
 end
-
 function echange(boo)
   getemote()
   gg.setVisible(false)
@@ -1265,7 +1217,6 @@ function echange(boo)
     setstr(hitarr[2]+0x60-0x18,24,'UiEmoteAP08DeepBreath')
   end
 end
-
 function getemote()
   if #emotelist ~= 0 then
     return;
@@ -1311,7 +1262,6 @@ function getemote()
   --print(emotelist)
   gg.toast('found : ' .. #emotelist .. ' emotes')
 end
-
 function chemote()
   getemote()
   xb1 = {}
@@ -1339,7 +1289,6 @@ function chemote()
     end
   end
 end
-
 function schemote()
   getemote()
   xb1 = {}
@@ -1358,7 +1307,6 @@ function schemote()
     end
   end
 end
-
 function absflower()
   gg.setVisible(false)
   tmp = {}
@@ -1385,8 +1333,6 @@ function absflower()
   gg.setValues(tup)
   gg.toast('done : ' .. kj)
 end
-
-
 function abslight()
   ---1,309,381,888
   nn = 0
@@ -1402,7 +1348,6 @@ function abslight()
     setadd(eoffsets.nentity + poffsets.wwings + 0x120*(i-1),gg.TYPE_DWORD,8,false)
   end
 end
-
 function absorb()
   gg.setVisible(false)
   abslight()
@@ -1434,7 +1379,6 @@ function absorb()
   --gg.addListItems(nn)
   gg.clearResults()
 end
-
 function absspirits()
   ExMach = 0xFCD0
   xde = {}
@@ -1449,7 +1393,6 @@ function absspirits()
   end
   gg.setValues(xde)
 end
-
 function portallegacy(str)
   if eoffsets.world == 0x00 then
     gg.clearResults()
@@ -1485,7 +1428,6 @@ function portallegacy(str)
   setstr(eoffsets.world,24,'CandleSpace')
   setadd(pbase + poffsets.pwing,gg.TYPE_FLOAT,14.0,false)
 end
-
 function portal(str)
   if psettings.portaldef then
     portallegacy(str)
@@ -1533,7 +1475,6 @@ function portal(str)
     gg.sleep(1000)
   end
 end
-
 function teleb()
   a = {}
   b = {}
@@ -1553,7 +1494,6 @@ function teleb()
   setposit(pworld[c][d][1][1],pworld[c][d][1][2],pworld[c][d][1][3])
   gg.setVisible(false)
 end
-
 function getmap()
   nn = ''
   for i = 0, 24 do
@@ -1568,7 +1508,6 @@ function getmap()
   end
   return nn
 end
-
 function pmagic(arr,id,sil)
   --if id == 0 then mreset(); return; end
   nn = {}
@@ -1603,7 +1542,6 @@ function pmagic(arr,id,sil)
   --gg.toast(poffsets.magic + 0xC00)
   setadd(tgt + 0x28,gg.TYPE_DWORD,sil,false)
 end
-
 function setposit(mx,my,mz)
   jh = {
     {
@@ -1624,7 +1562,6 @@ function setposit(mx,my,mz)
   }
   gg.setValues(jh)
 end
-
 function getpos()
   pmg = getcoord(true)
  px = pmg[1]
@@ -1633,7 +1570,6 @@ function getpos()
 --print(px,py,pz)
 gg.toast(tostring(px) .. " / " .. tostring(py) .. " / " .. tostring(pz))
 end
-
 function viscandle(bool)
   xv = {}
   for i = 0,128 do
@@ -1651,7 +1587,6 @@ function viscandle(bool)
   --gg.toast(#xv)
   gg.setValues(xv)
 end
-
 function noclip()
 gg.clearResults()
 gg.setVisible(false)
@@ -1671,7 +1606,6 @@ bb = gg.getResults(gg.getResultsCount())
     gg.setValues(ee)
   end
 end
-
 function inputstr()
     input=gg.prompt(
       {''},
@@ -1679,7 +1613,6 @@ function inputstr()
     	{[1]='text'})
     return input[1]
 end
-
 function inputnum(def)
     input=gg.prompt({'Default : ' .. def}
     	, 	{[1]=def}
@@ -1690,7 +1623,6 @@ function inputnum(def)
     	    return input[1]
     	end
 end
-
 function setstr(add,range,str)
   nn = gg.bytes(str)
   hv = {}
@@ -1706,7 +1638,6 @@ function setstr(add,range,str)
   end
   gg.setValues(hv)
 end
-
 function changehit()
   --2089048596
   --1251050323
@@ -1738,7 +1669,6 @@ function changehit()
   gg.setValues(hitarr)
   --gg.clearResults()
 end
-
 function startrace(ty)
   if ty == 1 then
     setposit(166.247,1187,397.849)
@@ -1750,7 +1680,6 @@ function startrace(ty)
   --[[
   {map='Sunset_FlyRace'$$name='sit1'$$x=166.2477569580078$$y=1186.892578125$$z=397.8493957519531}$$
 {map='SunsetRace'$$name='sit2'$$x=156.28892517089844$$y=935.0137329101562$$z=662.2101440429688}$$
-
   
   setadd(eoffsets.nentity + poffsets.rrace,gg.TYPE_DWORD,1,true)
   rcs = 0
@@ -1767,7 +1696,6 @@ function startrace(ty)
   end
   ]]--
 end
-
 function dorace()
   gg.toast('Starting race...')
   gg.removeListItems(flowers)
@@ -1834,7 +1762,6 @@ function dorace()
     gg.addListItems(candles)
   gamespeed(psettings.crspeed)
 end
-
 function espam()
   if getadd(pbase + poffsets.magic,gg.TYPE_DWORD) == 0 then 
     pmagic(1,1750685908,0)
@@ -1847,7 +1774,6 @@ function espam()
     setadd(adr,gg.TYPE_DWORD,0,true)
   end
 end
-
 function ftrigger()
   --ctrl+C,V
   if not fastitem then return; end
@@ -1856,7 +1782,6 @@ function ftrigger()
   if xv < 0xFFFFFF then return; end
   setadd(xv+0x264,gg.TYPE_FLOAT,0,false)
 end
-
 function mtrigger()
   dfs = getadd(pbase + poffsets.pshout,gg.TYPE_FLOAT)
   if crset.enable then
@@ -1911,7 +1836,6 @@ function mtrigger()
   end
   end
 end
-
 function htrigger()
   dfs = getadd(pbase + poffsets.gohome,gg.TYPE_FLOAT)
   if fastvalue then
@@ -1931,7 +1855,6 @@ function htrigger()
   end
   
 end
-
 function chooseplayer()
   vsr = {}
   vsw = {}
@@ -1982,7 +1905,6 @@ function chooseplayer()
     return ret 
   end
 end
-
 function teleplayers()
   vh = gg.choice({
     '⏩Teleport to players',
@@ -2063,9 +1985,7 @@ function teleplayers()
   end
   if vh == 5 then
     --Taran and Tosta will copy this
-    
-    gg.setVisible(false)
-        nra = chooseplayer()
+    nra = chooseplayer()
     if nra < 1 then return; end
     gg.setVisible(false)
     exma = pbase + poffsets.positX + (nra * 0xFDC0)
@@ -2119,7 +2039,6 @@ function teleplayers()
     resetfriendnode()
   end
 end
-
 function hcamera()
     if eoffsets.ncamera == 0x00 then
       --camera 2000f;2000f;1
@@ -2133,7 +2052,6 @@ function hcamera()
     end
     return true
 end
-
 --IQ10 Auto farm cus i'm lazy
 function wingfarm(aa,bb)
   nyn = ''
@@ -2153,7 +2071,6 @@ function wingfarm(aa,bb)
   end
   gg.toast('done')
 end
-
 function candlefarm(aa,bb)
   nyn = ''
   myn = getadd(pbase + poffsets.mcandles,gg.TYPE_DWORD)
@@ -2247,11 +2164,9 @@ function candlefarm(aa,bb)
   gg.removeListItems(candles)
   gg.removeListItems(flowers)
 end
-
 function showmessage()
   
 end
-
 function doorpeek(boo)
   dpoint = eoffsets.nentity - poffsets.mportal
   vf = {}
@@ -2289,7 +2204,6 @@ function doorpeek(boo)
   if hf == nil then return; end
   setposit(mf[hf].x,mf[hf].y,mf[hf].z)
 end
-
 function getmagics()
   gg.toast('Scanning...')
   xcv = pbase - poffsets.fullmagic
@@ -2308,7 +2222,6 @@ function getmagics()
    table.insert(allmagics,{xse1,xse2,xse3})
   end
 end
-
 function modmagic(ty) 
   if ty == 1 then 
     gg.setVisible(false) 
@@ -2355,7 +2268,6 @@ function modmagic(ty)
     setadd(madd[mxb],gg.TYPE_DWORD,allmagics[mxc][2],false) 
   end
 end
-
 function ovrdaily()
   owval = inputnum(1)
   ftarget = eoffsets.nentity - poffsets.daily
@@ -2369,7 +2281,6 @@ function ovrdaily()
   gg.setValues(ftbl)
   gg.toast('done')
 end
-
 function dumpdaily()
   ftarget = eoffsets.nentity - poffsets.daily
   fstr = ''
@@ -2380,7 +2291,6 @@ function dumpdaily()
   end
   gg.copyText(fstr)
 end
-
 function magicmenu()
   gf = gg.choice({'Do spell','Do spell no effects','Modify my spell','Unlimited spells temporary', 'Random spells','Remove all spells'},nil,'')
   if gf == nil then return; end
@@ -2431,7 +2341,6 @@ function magicmenu()
   end
   gg.setVisible(false)
 end
-
 function dumpmagic()
   if #allmagics == 0 then
     getmagics()
@@ -2444,7 +2353,6 @@ xstr = ''
  end
  gg.copyText(xstr)
 end
-
 function dumpdata()
   xstr = ''
   gg.clearResults()
@@ -2465,7 +2373,6 @@ function dumpdata()
  end
  gg.copyText(xstr)
 end
-
 function searchgl()
   gg.clearResults()
   ggrange(4)
@@ -2477,7 +2384,6 @@ function searchgl()
   eoffsets.brighter=gg.getResults(1)[1].address + 0x1F
   end
 end
-
 function collectcrab(uy)
   frz = true
   eval = {}
@@ -2559,7 +2465,6 @@ if #eval == 0 then return; end
     end
   end
 end
-
 function collectkrill(uy)
   frz = true
   eval = {}
@@ -2649,7 +2554,6 @@ if #eval == 0 then return; end
     setposit(getadd(rpoint,gg.TYPE_FLOAT),getadd(rpoint+0x4,gg.TYPE_FLOAT),getadd(rpoint+0x8,gg.TYPE_FLOAT))
   end
 end
-
 function killgame()
   nn = {}
   for i=0,4000 do
@@ -2657,8 +2561,6 @@ function killgame()
   end
   gg.setValues(nn)
 end
-
-
 function fkelders()
   gg.clearResults()
   ggrange(4)
@@ -2676,7 +2578,6 @@ function fkelders()
     gg.setValues(mm)
   end
 end
-
 function hookui()
   vm = getmap()
   if reached ~= vm then
@@ -2752,7 +2653,6 @@ function hookui()
   end
   gg.setVisible(false)
 end
-
 function getfriendnode()
   if #nodes < 3 then
     --[[
@@ -2791,7 +2691,6 @@ function getfriendnode()
   end
   
 end
-
 function setdesk(str,add)
   if eoffsets.pdesk == 0x00 then
     gg.setVisible(false)
@@ -2807,7 +2706,6 @@ function setdesk(str,add)
   end
   setstr(eoffsets.pdesk + add,24,str)
 end
-
 function setspirit(val)
   nfirst = false
   if eoffsets.gspirits == 0x00 then
@@ -2835,11 +2733,9 @@ function setspirit(val)
   gg.toast('done')
   --print(eoffsets.gspirits)
 end
-
 function calc3d(a,b)
   return math.sqrt((a.x - b.x)^2 + (a.y - b.y)^2 + (a.z - b.z)^2)
 end
-
 function telelist()
   kurr = {'🆙️Share this location'}
   karr = {0}
@@ -2863,7 +2759,6 @@ function telelist()
   end
   gg.setVisible(false)
 end
-
 function resetfriendnode()
   xrs = {}
   for i,v in ipairs(nodes) do
@@ -2873,7 +2768,6 @@ function resetfriendnode()
   gg.setValues(xrs)
   gg.toast('node reset')
 end
-
 function reachtest()
   nda = {}
   ndb = 0
@@ -2892,7 +2786,6 @@ function reachtest()
   gg.toast(ndb)
   gg.setValues(nda)
 end
-
 function nowind()
   nn = 0x00
   kj = false
@@ -2933,7 +2826,6 @@ function nowind()
   gg.clearResults()
   ]]--
 end
-
 function scsettings()
   xcs = gg.choice({
     'Auto CR speed hack : ' .. psettings.crspeed,
@@ -3018,15 +2910,12 @@ function scsettings()
   
   scsettings()
 end
-
 startup()
 --That dead sky open source by Kel
 --Do you have some good functions or codes?
---Tell me https://t.me/EL_Khan049
-
+--Tell me discord ExMachina#5142
 gg.setVisible(false)
 gg.showUiButton()
-
 function domenu()
       m=gg.choice({'🎈Wings'
       	,'🕯Collect Candles'
@@ -3975,7 +3864,7 @@ function domenu()
       end
       if m == 15 then
         x=gg.choice({'Kill game','print offsets','print emotes','print items','print magics','print daily','frags','pick crab','throw crab','absorb spirits','execute','load coord','door'
-      },nil,'⚠️This features are not stable')
+        },nil,'⚠️This features are not stable')
         if x == 1 then
           killgame()
         end
@@ -4022,12 +3911,11 @@ function domenu()
         if x == 13 then
           doorpeek(false)
         end
-      
+        
       end
         --absflower()
       
 end
-
 function hsmenu()
   --h 73 6F 63 69 61 6C 6C 5F 68 69 64 64 65 5F 6E 5F 5F 73 65 65 6B 6B 5F 77 6F 6E 6E 00 73 6F 63 63 69 61 6C 5F 5F 68 69 64 65 65 5F 6E 5F 73 73 65 65 6B 5F 5F 66 69 6E 69 69 73 68 65 64 64 00 48 69 64 64 65 53 65 65 65 6B 57 69 6E 6E
   vqw = gg.choice(
@@ -4064,7 +3952,6 @@ function hsmenu()
   end
   gg.setVisible(false)
 end
-
 function crmenu()
   if #crlist == 0 then
     gg.toast('failed to load coord list!')
@@ -4300,7 +4187,6 @@ function crmenu()
   end
   gg.setVisible(false)
 end
-
 function wrmenu()
   hq = getmap()
   --gg.toast(#crlist)
@@ -4438,7 +4324,6 @@ function wrmenu()
   end
   gg.setVisible(false)
 end
-
 function spinmenu()
   gg.setVisible(false)
   if spinset.enable then
@@ -4469,7 +4354,6 @@ function spinmenu()
   spinset.val = spnf
   setadd(spad,gg.TYPE_DWORD,0,spinset.lby)
 end
-
 function telemenu()
   xh = gg.choice({
     'Select other',
@@ -4505,7 +4389,6 @@ function telemenu()
     return;
   end
 end
-
 function spinloop()
   if not spinset.enable then
     return;
@@ -4528,7 +4411,6 @@ function spinloop()
   setadd(eoffsets.nentity - poffsets.pwalk - 0x90,gg.TYPE_FLOAT,math.sin(spinset.rot*math.pi/180),true)
   setadd(eoffsets.nentity - poffsets.pwalk - 0x88,gg.TYPE_FLOAT,math.cos(spinset.rot*math.pi/180),true)
 end
-
 function teleloop()
   if teleparr.enable == false then return; end
   --[[
@@ -4585,7 +4467,6 @@ function teleloop()
     return;
   end
 end
-
 while true do
   if teleparr.enable then
     teleloop()
@@ -4659,7 +4540,6 @@ while true do
   end
    gg.sleep(100)
 end
-
 --That dead sky open source by Kel
 --Do you have some good functions or codes?
---Tell me https://t.me/EL_Khan049
+--Tell me discord ExMachina#5142
