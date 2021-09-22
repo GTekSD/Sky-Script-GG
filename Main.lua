@@ -6,7 +6,7 @@
 
 
 
-gg.toast('FuckChina Loaded')
+gg.toast('SkyCheats Loaded')
 ddd = 210922
 pshare = ''
 umenu = true
@@ -15,7 +15,7 @@ fastvalue = false
 fastitem = false
 echanged = false
 teleping = false
-message = '⚠️Use at educational and personal only⚠️\nYour own risk'
+message = '⚠️Use personal only⚠️\nGTekSD'
 fastmax = 0
 crset = {enable = false, level = 0, map = ''}
 wrset = {enable = false, level = 0, map = ''}
