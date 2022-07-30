@@ -7,22 +7,22 @@ str2 = false
 str3 = false
 
 
-on = "[ON]"
-off = "[OFF]"
+on  = '|✅|'
+off = '|❌|'
 
+wall = off
 wing = off
 maxlvwing = off
 wingpower = off
-graphx = off
 quick = off
-charg = off
 under = off
+charg = off
 jump = off
 flygravity = off
-noequip = off
-texture = off
 cloudss = off
-
+--noequip = off
+--texture = off
+--graphx = off
 
 
 local old = gg.getRanges();
@@ -115,33 +115,45 @@ for i, v in ipairs(flygrvt) do
 revertflygravity[i] = {address = v.address, flags = v.flags, value = v.value}
 end
 
+
+function pmove(dis)
+	local x,y,z = getadd(coords['z'], gg.TYPE_FLOAT), getadd(coords['y'], gg.TYPE_FLOAT), getadd(coords['x'], gg.TYPE_FLOAT)
+	local radin = getadd(player_r, gg.TYPE_FLOAT)
+	
+	local ax = dis * math.sin(radin)
+	local az = dis * math.cos(radin)
+
+	setposit(x + ax,y,z + az)
+end
+
 function START()
   menu = gg.multiChoice({
-	  wall..'[⬆️] Wall Breach',
-	  wing..'[♾️] Unli-wing Energy',
-      maxlvwing..'[🦚] 14-Wings',
-      wingpower..'[🦸‍♂️] Superman',
-	  quick.. '[👟] Super Speed',
-	  under.. '[⬇️] Underground',
-      charg.. '[🎆] Recharge Wings',
-      jump.. '[🦘] Jump distance midair',
-      flygravity.. '[🧑‍🚀] Fly gravity',
-	  cloudss.. '[☁️] Hide Clouds',
-      noequip.. '[❌] Hide equipent',
-      texture.. '[🌄] Stretch texture (must go through gate)',
-	  graphx.. '[🌁] Smoother Graphixs',
-      'EXIT'
-      },nil,'Select cheat')
+			wall..'[⬆️] Wall Breach',
+			wing..'[♾️] Unli-wing Energy',
+			maxlvwing..'[🦚] 14-Wings',
+			wingpower..'[🦸‍♂️] Superman',
+			quick.. '[👟] Super Speed',
+			under.. '[⬇️] Underground',
+			charg.. '[🎆] Recharge Wings',
+			jump.. '[🦘] Jump distance midair',
+			flygravity.. '[🧑‍🚀] Fly gravity',
+			cloudss.. '[☁️] Hide Clouds',
+--			noequip.. '[❌] Hide equipent',
+--			texture.. '[🌄] Stretch texture (must go through gate)',
+--			graphx.. '[🌁] Smoother Graphixs',
+			'EXIT'
+		},nil,'Select cheat')
+	
   if menu == nil then
-    noselect()
+	noselect()
   else
     if menu[14] then
       wiping() 
     else
 	
       if menu == 1 then
-			pmove(5)
-	  end
+		pmove(5)
+	end
 	  gg.toast('Boom!!!')
 	  
 	  if menu[2] then
@@ -153,6 +165,7 @@ function START()
           end
           gg.addListItems(wings)
           gg.toast('wings deactivated')
+					
         else
           wing = on
           if str1 then
@@ -162,6 +175,7 @@ function START()
             end
             gg.addListItems(wings)
             gg.toast('wings activated')
+						
           else
             str1 = true
             gg.setRanges(gg.REGION_C_ALLOC | gg.REGION_ANONYMOUS | gg.REGION_OTHER)
@@ -175,10 +189,11 @@ function START()
             gg.addListItems(wings)
             gg.clearResults()
             gg.toast('wings activated 1')
-          end
+          end				
         end
       end
       
+			
       if menu[3] then
         if maxlvwing == on then
           maxlvwing = off
@@ -208,10 +223,11 @@ function START()
       if menu[4] then
         pwr = gg.choice({
             '[❎]Normal',
-            '[⭐]Soft',
-            '[☄️☄️]Strong',
-            '[🌟☄️]Stronger',
-            '[🌠☄️]Super',
+            '[⭐2]Soft()',
+            '[☄️5]Strong',
+            '[☄️10]Super',
+	    '[☄️20]Ultra',
+            '[☄️2k]Ultra Max Pro',
             '[⬇️]To high? Fly down',
             '[🔙]BACK'
             },nil,'WARNING, DONT TRAP YOUR SELF')
@@ -238,24 +254,31 @@ function START()
                   gg.setValues(wingpwr)
                   gg.toast('🌟🌟power activated')
                 else
-                  if pwr == 4 then
-                    wingpower = on
-                    wingpwr[3].value = '20'
+		  if pwe == 4 then
+		    wingpower = on
+                    wingpwr[3].value = '10'
                     gg.setValues(wingpwr)
                     gg.toast('🌟🌟🌟power activated')
-                  else
+		  else								
                     if pwr == 5 then
                       wingpower = on
-                      wingpwr[3].value = '2000'
+                      wingpwr[3].value = '20'
                       gg.setValues(wingpwr)
-                      gg.toast('🌟🌟🌟🌟power activated')
+                      gg.toast('🌟🌟🌟power activated')
                     else
                       if pwr == 6 then
                         wingpower = on
-                        wingpwr[3].value = '-500'
+                        wingpwr[3].value = '2000'
                         gg.setValues(wingpwr)
-                        gg.toast('⬇️⬇️⬇️⬇️power activated')
-                      end
+                        gg.toast('🌟🌟🌟🌟power activated')
+                      else
+                        if pwr == 7 then
+                          wingpower = on
+                          wingpwr[3].value = '-500'
+                          gg.setValues(wingpwr)
+                          gg.toast('⬇️⬇️⬇️⬇️power activated')
+                        end
+		      end
                     end
                   end
                 end
