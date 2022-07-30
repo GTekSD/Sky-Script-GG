@@ -20,6 +20,7 @@ charg = off
 jump = off
 flygravity = off
 cloudss = off
+nowind = off
 --noequip = off
 --texture = off
 --graphx = off
@@ -115,6 +116,26 @@ for i, v in ipairs(flygrvt) do
 revertflygravity[i] = {address = v.address, flags = v.flags, value = v.value}
 end
 
+function setposit(mx,my,mz)
+	jh = {
+		{
+			address = coords['z'],
+			flags = gg.TYPE_FLOAT,
+			value = mx
+		},
+		{
+			address = coords['y'],
+			flags = gg.TYPE_FLOAT,
+			value = my
+		},
+		{
+			address = coords['x'],
+			flags = gg.TYPE_FLOAT,
+			value = mz
+		}
+	}
+	gg.setValues(jh)
+end
 
 function pmove(dis)
 	local x,y,z = getadd(coords['z'], gg.TYPE_FLOAT), getadd(coords['y'], gg.TYPE_FLOAT), getadd(coords['x'], gg.TYPE_FLOAT)
@@ -125,6 +146,24 @@ function pmove(dis)
 
 	setposit(x + ax,y,z + az)
 end
+
+
+function nowind()
+	xy = {}
+
+	for i=0, 100 do
+		xk = nentity + offsets.wind_off + (i * 0x100)
+
+		if getadd(xk, gg.TYPE_DWORD) ~= 0 then
+			for y = 1, 14 do
+				table.insert(xy, {address = xk - (y * 0x4), flags = gg.TYPE_DWORD, value = 0})
+			end
+		end
+	end
+
+	gg.setValues(xy)
+end
+
 
 function START()
   menu = gg.multiChoice({
@@ -138,6 +177,7 @@ function START()
 			jump.. '[🦘] Jump distance midair',
 			flygravity.. '[🧑‍🚀] Fly gravity',
 			cloudss.. '[☁️] Hide Clouds',
+			nowind.. '[🍃] No Wind'
 --			noequip.. '[❌] Hide equipent',
 --			texture.. '[🌄] Stretch texture (must go through gate)',
 --			graphx.. '[🌁] Smoother Graphixs',
@@ -151,12 +191,13 @@ function START()
       wiping() 
     else
 	
-      if menu == 1 then
-		pmove(5)
-	end
-	  gg.toast('Boom!!!')
+      if menu[1] then
+	 wall == on
+	 pmove(5)
+      end
+	 gg.toast('Boom!!!')
 	  
-	  if menu[2] then
+	if menu[2] then
         if wing == on then 
           wing = off
           for i, v in ipairs(wings) do
@@ -223,9 +264,9 @@ function START()
       if menu[4] then
         pwr = gg.choice({
             '[❎]Normal',
-            '[⭐2]Soft()',
-            '[☄️5]Strong',
-            '[☄️10]Super',
+            '[⭐1]Soft()',
+            '[☄️2]Strong',
+            '[☄️5]Super',
 	    '[☄️20]Ultra',
             '[☄️2k]Ultra Max Pro',
             '[⬇️]To high? Fly down',
@@ -244,19 +285,19 @@ function START()
             else
               if pwr == 2 then
                 wingpower = on
-                wingpwr[3].value = '2'
+                wingpwr[3].value = '1'
                 gg.setValues(wingpwr)
                 gg.toast('🌟power activated')
               else
                 if pwr == 3 then
                   wingpower = on
-                  wingpwr[3].value = '5'
+                  wingpwr[3].value = '2'
                   gg.setValues(wingpwr)
                   gg.toast('🌟🌟power activated')
                 else
 		  if pwe == 4 then
 		    wingpower = on
-                    wingpwr[3].value = '10'
+                    wingpwr[3].value = '5'
                     gg.setValues(wingpwr)
                     gg.toast('🌟🌟🌟power activated')
 		  else								
@@ -292,7 +333,7 @@ function START()
         if quick == on then
           quick = off
           gg.setValues(revertquickstp)
-          gg.toast('Quick Steps deactivated')
+          gg.toast('Super Speed deactivated')
         else
           quick = on
           quickstp[1].value = '50'
@@ -361,8 +402,12 @@ function START()
           gg.toast('Clouds activated')
         end
       end
-	  
+			
       if menu[11] then
+	nowind()
+      end
+	  
+      if menu[12] then
         if noequip == on then
           noequip = off
           gg.setValues(revertequipment)
@@ -396,7 +441,7 @@ function START()
         end
       end
       
-      if menu[12] then
+      if menu[13] then
         if texture == on then
           texture = off
           gg.setValues(reverttexture)
@@ -430,7 +475,7 @@ function START()
         end
       end
       
-	  if menu[13] then
+	  if menu[14] then
         if graphx == on then
           graphx = off
           gg.setValues(revertgraph)
